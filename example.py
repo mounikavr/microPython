@@ -32,12 +32,20 @@ servo1.calibration(80,1400,1000,1500,1200)
  #Connect any sensor to pybaord.
  #Example:  connect mq2 gas sensor to pyboard. mq2 sensor siganl pin connected to y11 pin.
  #and ground to gnd of pybaord.
- 
-adc1=pyb.ADC(pyb.Pin.board.Y12)
-read_value = adc1.read() #print the sensor values 
-print(read_value)
-if(read_value > 200):
-   print("warning! --- Threshold exceeded. ")
+
+y4 = machine.Pin('Y4')
+s_val = pyb.ADC(y4)
+print(s_val.read())
+if(s_val.read() > 120):
+   print("threshold exceeds! ")
 else:
-  print("Smoke detected..")
+   print("regular Condition. ")
+ 
+#adc1=pyb.ADC(pyb.Pin.board.Y12)
+#read_value = adc1.read() #print the sensor values 
+#print(read_value)
+#if(read_value > 200):
+#   print("warning! --- Threshold exceeded. ")
+#else:
+#  print("Smoke detected..")
      
