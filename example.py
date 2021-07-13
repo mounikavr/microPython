@@ -8,7 +8,7 @@ from pyb import Servo
 
 float read_value
 #Initializing servo pins on pyboard:
- servo1 = pyb.Servo(1)
+servo1 = pyb.Servo(1)
  
  #to change the angle of servo motor:
  
